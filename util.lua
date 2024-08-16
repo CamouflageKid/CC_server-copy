@@ -1,3 +1,4 @@
 while true do
-    print("Hello Fuckers!")
-end
+    redstone.setOutput("top", not redstone.getOutput("top"))
+    sleep(0.5)
+  end
