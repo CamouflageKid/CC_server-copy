@@ -1,4 +1,4 @@
 while true do
     redstone.setOutput("top", not redstone.getOutput("top"))
-    sleep(0.4)
+    sleep(1)
 end
