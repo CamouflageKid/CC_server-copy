@@ -1,1 +1,3 @@
---Hello World!!
+while true do
+    print("test!")
+end
