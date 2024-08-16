@@ -24,5 +24,5 @@ while true do
     end
 
     
-    sleep(0.5)
+    sleep(0.05)
 end
