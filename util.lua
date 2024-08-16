@@ -1,3 +1,3 @@
 while true do
-    print("test!")
+    print("Hello World!")
 end
