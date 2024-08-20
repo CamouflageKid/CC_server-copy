@@ -14,12 +14,15 @@ local pos1, pos2, pos3 = gps.locate()
 
 local function compare_locations(p1,p2,p3)
     if p1 <= (pos1 + Range) and p1 >= (pos1 - Range) then
+        print("1")
         return true
     end
     if p2 <= (pos2 + Range) and p2 >= (pos2 - Range) then
+        print("2")
         return true
     end
     if p3 <= (pos3 + Range) and p3 >= (pos3 - Range) then
+        print("3")
         return true
     end
     return false
@@ -30,6 +33,7 @@ Random_val = true
 function Rednet_FAdmin()
     while true do
         id, data = rednet.receive("forest_admin")
+        print("received")
 
         if compare_locations(data.p1, data.p2, data.p3) then
             Random_val = false
