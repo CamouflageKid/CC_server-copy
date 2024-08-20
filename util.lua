@@ -1,3 +1,5 @@
+peripheral.find("modem", rednet.open)
+
 local function output(dir)
     redstone.setOutput("left", false)
     redstone.setOutput("right", false)
