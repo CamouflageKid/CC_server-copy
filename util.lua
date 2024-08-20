@@ -9,7 +9,7 @@ local function output(dir)
     redstone.setOutput(dir, true)
 end
 
-Range = 10
+Range = 20
 local pos1, pos2, pos3 = gps.locate()
 
 local function compare_locations(p1,p2,p3)
