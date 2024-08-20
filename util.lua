@@ -64,3 +64,5 @@ function Main()
         end
     end
 end
+
+parallel.waitForAll(Rednet_FAdmin, Main)
