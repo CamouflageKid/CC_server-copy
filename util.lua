@@ -44,6 +44,8 @@ function Rednet_FAdmin()
             else
                 Random_val = true
             end
+        else
+            Random_val = true
         end
     end
 end
