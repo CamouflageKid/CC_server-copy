@@ -7,8 +7,27 @@ local function output(dir)
     redstone.setOutput(dir, true)
 end
 
+Range = 10
+local pos1, pos2, pos3 = gps.locate()
+
+local function compare_locations(p1,p2,p3)
+    if p1 <= (pos1 + Range) and p1 >= (pos1 - Range) then
+        return true
+    end
+    if p2 <= (pos2 + Range) and p2 >= (pos2 - Range) then
+        return true
+    end
+    if p3 <= (pos3 + Range) and p3 >= (pos3 - Range) then
+        return true
+    end
+    return false
+end
 
 while true do
+
+
+
+
 
     local val = math.random(0, 4)
 
@@ -24,5 +43,5 @@ while true do
     end
 
     
-    sleep(1)
+    sleep(10)
 end
