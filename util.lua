@@ -32,8 +32,7 @@ Random_val = true
 
 function Rednet_FAdmin()
     while true do
-        id, data = rednet.receive("forest_admin")
-        print("received")
+        id, data = rednet.receive("forest_admin", 1)
 
         if compare_locations(data.p1, data.p2, data.p3) then
             Random_val = false
