@@ -28,16 +28,18 @@ end
 Random_val = true
 
 function Rednet_FAdmin()
-    id, data = rednet.receive("forest_admin")
+    while true do
+        id, data = rednet.receive("forest_admin")
 
-    if compare_locations(data.p1, data.p2, data.p3) then
-        Random_val = false
-        redstone.setOutput("left", true)
-        redstone.setOutput("right", true)
-        redstone.setOutput("front", true)
-        redstone.setOutput("back", true)
-    else
-        Random_val = true
+        if compare_locations(data.p1, data.p2, data.p3) then
+            Random_val = false
+            redstone.setOutput("left", true)
+            redstone.setOutput("right", true)
+            redstone.setOutput("front", true)
+            redstone.setOutput("back", true)
+        else
+            Random_val = true
+        end
     end
 end
 
