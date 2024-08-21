@@ -1,5 +1,7 @@
 peripheral.find("modem", rednet.open)
 
+rednet.host("industrial", "computer_inc")
+
 local function output(dir)
     redstone.setOutput("left", false)
     redstone.setOutput("right", false)
