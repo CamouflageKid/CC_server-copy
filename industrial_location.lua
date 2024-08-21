@@ -9,7 +9,7 @@ local function output(dir)
     redstone.setOutput(dir, true)
 end
 
-Range = 20
+Range = 100
 local pos1, pos2, pos3 = gps.locate()
 
 local function compare_locations(p1,p2,p3)
@@ -28,21 +28,21 @@ function Rednet_FAdmin()
         if data then
             if compare_locations(data.p1, data.p2, data.p3) then
                 Random_val = false
-                redstone.setOutput("left", true)
-                redstone.setOutput("right", true)
-                redstone.setOutput("front", true)
-                redstone.setOutput("back", true)
-            else
                 redstone.setOutput("left", false)
                 redstone.setOutput("right", false)
                 redstone.setOutput("front", false)
                 redstone.setOutput("back", false)
+            else
+                redstone.setOutput("left", true)
+                redstone.setOutput("right", true)
+                redstone.setOutput("front", true)
+                redstone.setOutput("back", true)
             end
         else
-            redstone.setOutput("left", false)
-            redstone.setOutput("right", false)
-            redstone.setOutput("front", false)
-            redstone.setOutput("back", false)
+            redstone.setOutput("left", true)
+            redstone.setOutput("right", true)
+            redstone.setOutput("front", true)
+            redstone.setOutput("back", true)
         end
     end
 end
