@@ -11,7 +11,7 @@ local function output(dir)
     redstone.setOutput(dir, true)
 end
 
-Player_List = {}
+local Player_List = {}
 Range = 100
 local pos1, pos2, pos3 = gps.locate()
 
@@ -21,6 +21,8 @@ local function compare_locations(p1,p2,p3)
             print("Returned true,",p1,p2,p3)
             return true
         end
+        print("Returned false,",p1,p2,p3)
+        return false
     end
     print("Returned false,",p1,p2,p3)
     return false
@@ -33,6 +35,7 @@ local function check()
             local checked = compare_locations(v.p1, v.p2, v.p3)
             if checked then is_player_in_area = true end
         end
+        Player_List = {}
         return is_player_in_area
     end
     return false
@@ -68,4 +71,4 @@ function clear_data()
     end
 end
 
-parallel.waitForAll(Rednet_FAdmin, clear_data)
+parallel.waitForAll(Rednet_FAdmin)
