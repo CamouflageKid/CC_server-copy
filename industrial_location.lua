@@ -63,7 +63,7 @@ end
 
 function clear_data()
     while true do
-        sleep(2)
+        sleep(1)
         Player_List = {}
     end
 end
