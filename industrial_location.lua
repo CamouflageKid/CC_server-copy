@@ -66,4 +66,4 @@ function clear_data()
     end
 end
 
-parallel.waitForAll(Rednet_FAdmin)
+parallel.waitForAll(Rednet_FAdmin, clear_data)
