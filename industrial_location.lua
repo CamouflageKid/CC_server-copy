@@ -16,7 +16,7 @@ Range = 100
 local pos1, pos2, pos3 = gps.locate()
 
 local function compare_locations(p1,p2,p3)
-    if p1 ~= nil and p2 ~= nil and p3 ~= nil then
+    if p1 ~= nil and p2 ~= nil and p3 ~= nil and pos1 ~= nil and pos2 ~= nil and pos3 ~= nil then
         if p1 <= (pos1 + Range) and p1 >= (pos1 - Range) and p2 <= (pos2 + Range) and p2 >= (pos2 - Range) and p3 <= (pos3 + Range) and p3 >= (pos3 - Range) then
             print("Returned true,",p1,p2,p3)
             return true
