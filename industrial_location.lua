@@ -22,6 +22,7 @@ local function compare_locations(p1,p2,p3)
             return true
         end
     end
+    print("Returned false,",p1,p2,p3)
     return false
 end
 
