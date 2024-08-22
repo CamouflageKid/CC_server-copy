@@ -25,12 +25,15 @@ local function compare_locations(p1,p2,p3)
 end
 
 local function check()
-    local is_player_in_area = false
-    for i, v in pairs(Player_List) do
-        local checked = compare_locations(v.p1, v.p2, v.p3)
-        if checked then is_player_in_area = true end
+    if Player_List ~= {} then
+        local is_player_in_area = false
+        for i, v in pairs(Player_List) do
+            local checked = compare_locations(v.p1, v.p2, v.p3)
+            if checked then is_player_in_area = true end
+        end
+        return is_player_in_area
     end
-    return is_player_in_area
+    return false
 end
 
 function Rednet_FAdmin()
