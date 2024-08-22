@@ -15,8 +15,8 @@ Player_List = {}
 Range = 100
 local pos1, pos2, pos3 = gps.locate()
 
-local function compare_locations(data,p1,p2,p3)
-    if data.p1 ~= nil and data.p2 ~= nil and data.p3 ~= nil then
+local function compare_locations(p1,p2,p3)
+    if p1 ~= nil and p2 ~= nil and p3 ~= nil then
         if p1 <= (pos1 + Range) and p1 >= (pos1 - Range) and p2 <= (pos2 + Range) and p2 >= (pos2 - Range) and p3 <= (pos3 + Range) and p3 >= (pos3 - Range) then
             return true
         end
@@ -28,7 +28,7 @@ local function check()
     if Player_List ~= {} then
         local is_player_in_area = false
         for i, v in pairs(Player_List) do
-            local checked = compare_locations(v, v.p1, v.p2, v.p3)
+            local checked = compare_locations(v.p1, v.p2, v.p3)
             if checked then is_player_in_area = true end
         end
         return is_player_in_area
