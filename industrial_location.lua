@@ -39,23 +39,6 @@ function Rednet_FAdmin()
 
         if data then
             Player_List[#Player_List + 1] = data
-            --if compare_locations(data.p1, data.p2, data.p3) then
-            --    Random_val = false
-            --    redstone.setOutput("left", false)
-            --    redstone.setOutput("right", false)
-            --    redstone.setOutput("front", false)
-            --    redstone.setOutput("back", false)
-            --else
-            --    redstone.setOutput("left", true)
-            --    redstone.setOutput("right", true)
-            --    redstone.setOutput("front", true)
-            --    redstone.setOutput("back", true)
-            --end
-        else
-            --redstone.setOutput("left", true)
-            --redstone.setOutput("right", true)
-            --redstone.setOutput("front", true)
-            --redstone.setOutput("back", true)
         end
 
         if check() then
@@ -70,6 +53,13 @@ function Rednet_FAdmin()
             redstone.setOutput("back", true)
         end
 
+    end
+end
+
+function clear_data()
+    while true do
+        sleep(2)
+        Player_List = {}
     end
 end
 
